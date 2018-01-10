@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.Pages.TappingPage">
+	<ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <Label Text="Tap to determine BPM. Resets after 2000 ms" HorizontalOptions="Center"/>
+            <Button x:Name="bpmButton" Text="Tap Me!" Clicked="on_bpmButtonClicked" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <Button x:Name="saveButton" Text="Save your Tap" Clicked="on_saveButtonClicked"/>
+    </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

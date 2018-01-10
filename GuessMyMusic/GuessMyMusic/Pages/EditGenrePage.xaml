@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.Pages.EditGenrePage">
+	<ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="10,0,10,0">
+            <Label Text="BPM value" FontAttributes="Bold"/>
+            <Label x:Name="infoLabel" />
+            <Label Text="Genre" FontAttributes="Bold"/>
+            <Entry x:Name="genreTitle"/>
+            <Label Text=""/>
+            <Button Text="Save" Clicked="OnSave"/>
+            <Button Text="Cancel" Clicked="OnCancel"/>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

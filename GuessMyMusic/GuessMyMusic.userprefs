@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{5E53FD35-44BE-40A8-927A-DB6B5B076E20}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GuessMyMusic/Models/ClassifyBPM.cs">
+    <Files>
+      <File FileName="GuessMyMusic/Pages/GenreListPage.xaml" Line="36" Column="15" />
+      <File FileName="Droid/Assets/genres.csv" Line="1" Column="1" />
+      <File FileName="Droid/Assets/taps.csv" Line="1" Column="1" />
+      <File FileName="GuessMyMusic/Models/ReaderWriter.cs" Line="16" Column="41" />
+      <File FileName="GuessMyMusic/Pages/GenreListPage.xaml.cs" Line="70" Column="13" />
+      <File FileName="GuessMyMusic/Pages/HistoryPage.xaml.cs" Line="144" Column="9" />
+      <File FileName="Droid/FileHelper.cs" Line="30" Column="45" />
+      <File FileName="GuessMyMusic/Models/IFileHelper.cs" Line="9" Column="38" />
+      <File FileName="GuessMyMusic/Models/ClassifyBPM.cs" Line="6" Column="20" />
+      <File FileName="GuessMyMusic/Models/Genre.cs" Line="17" Column="6" />
+      <File FileName="GuessMyMusic/Pages/EditGenrePage.xaml.cs" Line="21" Column="57" />
+      <File FileName="GuessMyMusic/Pages/TappingPage.xaml.cs" Line="58" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.GuessMyMusic.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.779C5231-39E6-479B-B6AF-3BC3261E16A0">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.GuessMyMusic.iOS>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.GuessMyMusic.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+</Properties>

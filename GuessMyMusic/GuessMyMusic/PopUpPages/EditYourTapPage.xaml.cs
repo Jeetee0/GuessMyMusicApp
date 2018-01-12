@@ -4,16 +4,16 @@ using GuessMyMusic.Models;
 
 using Xamarin.Forms;
 
-namespace GuessMyMusic.Pages
+namespace GuessMyMusic.PopUpPages
 {
-    public partial class EditGenrePage : ContentPage
+    public partial class EditYourTapPage : ContentPage
     {
         int index;
         Tap currentTap;
 
         public Tap CurrentTap { get => currentTap; set => currentTap = value; }
 
-        public EditGenrePage(int index, Tap selectedTap)
+        public EditYourTapPage(int index, Tap selectedTap)
         {
             InitializeComponent();
             this.index = index;
@@ -22,12 +22,12 @@ namespace GuessMyMusic.Pages
             genreTitle.Placeholder = selectedTap.Genre;
         }
 
-        void OnSave(object sender, EventArgs e) 
+        void OnSave(object sender, EventArgs e)
         {
             string genre = genreTitle.Text;
             CurrentTap.Genre = genre;
             CurrentTap.SetByUser = true;
-            HistoryPage.EditTapOfList(index, CurrentTap);
+            MainPages.HistoryPage.EditTapOfList(index, CurrentTap);
             Navigation.PopAsync();
         }
 

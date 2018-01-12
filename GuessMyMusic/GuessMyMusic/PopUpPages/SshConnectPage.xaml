@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.PopUpPages.SshConnectPage">
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" RowSpacing="0" Padding="5,10,5,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />       <!--entry-->
+                <RowDefinition Height="1*" />       <!--entry-->
+                <RowDefinition Height="1*" />       <!--entry-->
+                <RowDefinition Height="1*" />       <!--entry-->
+                <RowDefinition Height="1*" />       <!--connect button-->
+                <RowDefinition Height="0.5*" />     <!--label-->
+                <RowDefinition Height="1.5*" />     <!--predefine buttons-->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Entry x:Name="hostEntry" Placeholder="host/ip" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"/>
+            <Entry x:Name="portEntry" Placeholder="port" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"/>
+            <Entry x:Name="usernameEntry" Placeholder="username" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
+            <Entry x:Name="pwdEntry" IsPassword="true" Placeholder="password" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3"/>
+            <Button Text="Connect" Clicked="handleConnect" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4"/>
+            <Label Text="Predefined Connections:" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5"/>
+            <Button Text="Raspi Home" Clicked="handlePredefine" Grid.Column="0" Grid.Row="6"/>
+            <Button Text="Raspi Uni" Clicked="handlePredefine" Grid.Column="1" Grid.Row="6"/>
+            <Button Text="Youris Server" Clicked="handlePredefine" Grid.Column="2" Grid.Row="6"/>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

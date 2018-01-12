@@ -10,7 +10,7 @@ namespace GuessMyMusic.Models
     public static class ClassifyBPM
     {
         public static Tap ClassifyBpmValue(Tap currentTap) {
-            List<Genre> genreList = Pages.GenreListPage.GenreList;
+            List<Genre> genreList = MainPages.GenreOverviewPage.GenreList;
             int bpm = currentTap.Bpm;
             string bestGenre = "";
             int difference;

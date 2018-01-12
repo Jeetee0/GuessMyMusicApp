@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
-using GuessMyMusic.Pages;
+
+using GuessMyMusic.MainPages;
 
 namespace GuessMyMusic
 {
@@ -9,9 +10,9 @@ namespace GuessMyMusic
         {
             InitializeComponent();
             if (Device.RuntimePlatform == Device.iOS)
-                MainPage = new Pages.MainPage();
+                MainPage = new MainPages.MainPage();
             else
-                MainPage = new NavigationPage(new Pages.MainPage());
+                MainPage = new NavigationPage(new MainPages.MainPage());
         }
 
         protected override void OnStart()

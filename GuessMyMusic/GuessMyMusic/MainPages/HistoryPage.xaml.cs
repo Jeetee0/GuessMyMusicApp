@@ -7,7 +7,7 @@ using PCLStorage;
 
 using Xamarin.Forms;
 
-namespace GuessMyMusic.Pages
+namespace GuessMyMusic.MainPages
 {
     public partial class HistoryPage : ContentPage
     {
@@ -46,7 +46,7 @@ namespace GuessMyMusic.Pages
 
             if (action == "Edit") {
                 //open editpage to edit genre
-                Page editPage = new EditGenrePage(index, selectedTap) { Title = "Edit genre"};
+                Page editPage = new PopUpPages.EditYourTapPage(index, selectedTap) { Title = "Edit genre"};
                 await Navigation.PushAsync(editPage);
             } else if (action == "Delete") {
                 var response = await DisplayAlert("Delete saved Tap?", "Are you sure to delete your Tap with BPM value: " + selectedTap.Bpm + "?", "Delete", "Cancel");

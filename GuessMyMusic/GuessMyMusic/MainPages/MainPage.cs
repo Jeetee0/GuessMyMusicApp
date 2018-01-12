@@ -1,13 +1,13 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace GuessMyMusic.Pages
+namespace GuessMyMusic.MainPages
 {
     public class MainPage : TabbedPage
     {
         public MainPage()
         {
-            Page tapPage, historyPage, genreListPage = null;
+            Page tapPage, historyPage, genreListPage, sshControllingPage = null;
             NavigationPage.SetHasNavigationBar(this, false);
 
             switch (Device.RuntimePlatform)
@@ -17,14 +17,17 @@ namespace GuessMyMusic.Pages
                     {
                         Title = "Tap for BPM"
                     };
-
                     historyPage = new NavigationPage(new HistoryPage())
                     {
                         Title = "History of Taps"
                     };
-                    genreListPage = new NavigationPage(new GenreListPage())
+                    genreListPage = new NavigationPage(new GenreOverviewPage())
                     {
                         Title = "List of Genres"
+                    };
+                    sshControllingPage = new NavigationPage(new SshControllingPage())
+                    {
+                        Title = "ssh connection"
                     };
                     break;
                 default:
@@ -37,9 +40,13 @@ namespace GuessMyMusic.Pages
                     {
                         Title = "History of Taps"
                     };
-                    genreListPage = new GenreListPage()
+                    genreListPage = new GenreOverviewPage()
                     {
                         Title = "List of Genres"
+                    };
+                    sshControllingPage = new SshControllingPage()
+                    {
+                        Title = "ssh connection"
                     };
                     break;
             }
@@ -47,6 +54,7 @@ namespace GuessMyMusic.Pages
             Children.Add(tapPage);
             Children.Add(historyPage);
             Children.Add(genreListPage);
+            Children.Add(sshControllingPage);
 
             Title = Children[0].Title;
         }

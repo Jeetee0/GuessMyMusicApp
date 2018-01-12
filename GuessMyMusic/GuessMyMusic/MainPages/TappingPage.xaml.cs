@@ -5,13 +5,13 @@ using GuessMyMusic.Models;
 
 using Xamarin.Forms;
 
-namespace GuessMyMusic.Pages
+namespace GuessMyMusic.MainPages
 {
     public partial class TappingPage : ContentPage
     {
         List<double> listOfIntervals = new List<double>();
         double elapsed;
-        int avg;
+        public static int avg;
         int bpm;
         DateTime lastDateTime = new DateTime();
         DateTime currentDateTime;
@@ -54,6 +54,7 @@ namespace GuessMyMusic.Pages
         }
 
         void on_saveButtonClicked(object sender, EventArgs e) {
+
             //save Tap to History
             DateTime currentDate = DateTime.Now;
             Tap newTap = new Tap(bpm, currentDate, "", false);

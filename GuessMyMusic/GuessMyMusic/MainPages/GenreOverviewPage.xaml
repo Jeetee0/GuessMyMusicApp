@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.Pages.GenreListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.MainPages.GenreOverviewPage">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <Grid Padding="10,5,5,0">
@@ -21,7 +21,7 @@
                                             <ColumnDefinition Width="4*" />
                                             <ColumnDefinition Width="1.5*" />
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" />
+                                        <Label x:Name="genreName" Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" />
                                         <Label Grid.Column="1" Text="{Binding BpmRange}" VerticalOptions="Center" />
                                     </Grid>
                                 </ViewCell.View>

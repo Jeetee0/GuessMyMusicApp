@@ -71,7 +71,7 @@ namespace GuessMyMusic.Droid
                 {
                     Scripting scripting = ssh.StartScripting(command);
                     //wait 2 secs
-                    scripting.Timeout = 2000;
+                    scripting.Timeout = 50000;
                     result = scripting.ReadUntil(ScriptEvent.Closed);
                     if (result == null || result.Length == 0)
                         result = "No response";
@@ -86,6 +86,7 @@ namespace GuessMyMusic.Droid
         }
 
         public void Disconnect() {
+            connected = false;
             ssh.Disconnect();
         }
 

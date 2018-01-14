@@ -52,11 +52,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPages\SshControllingPage.xaml">
+    <EmbeddedResource Include="PopUpPages\GenreInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpPages\RaspiAPICall.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUpPages\GenreInfoPage.xaml">
+    <EmbeddedResource Include="MainPages\CommunicationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -91,14 +95,17 @@
     <Compile Include="PopUpPages\SshCommandPage.xaml.cs">
       <DependentUpon>SshCommandPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPages\SshControllingPage.xaml.cs">
-      <DependentUpon>SshControllingPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PopUpPages\GenreInfoPage.xaml.cs">
       <DependentUpon>GenreInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\HTTPRequester.cs" />
-    <Compile Include="Models\RestRaspi.cs" />
+    <Compile Include="Models\RhythmApi.cs" />
+    <Compile Include="PopUpPages\RaspiAPICall.xaml.cs">
+      <DependentUpon>RaspiAPICall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPages\CommunicationPage.xaml.cs">
+      <DependentUpon>CommunicationPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MainPages\" />

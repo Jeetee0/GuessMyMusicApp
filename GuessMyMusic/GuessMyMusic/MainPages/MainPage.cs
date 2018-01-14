@@ -7,7 +7,7 @@ namespace GuessMyMusic.MainPages
     {
         public MainPage()
         {
-            Page tapPage, historyPage, genreListPage, sshControllingPage = null;
+            Page tapPage, historyPage, genreListPage, communicationPage = null;
             NavigationPage.SetHasNavigationBar(this, false);
 
             switch (Device.RuntimePlatform)
@@ -23,11 +23,11 @@ namespace GuessMyMusic.MainPages
                     };
                     genreListPage = new NavigationPage(new GenreOverviewPage())
                     {
-                        Title = "List of Genres"
+                        Title = "Genres Overview"
                     };
-                    sshControllingPage = new NavigationPage(new SshControllingPage())
+                    communicationPage = new NavigationPage(new CommunicationPage())
                     {
-                        Title = "ssh connection"
+                        Title = "Connecting to Raspi etc."
                     };
                     break;
                 default:
@@ -44,9 +44,9 @@ namespace GuessMyMusic.MainPages
                     {
                         Title = "List of Genres"
                     };
-                    sshControllingPage = new SshControllingPage()
+                    communicationPage = new CommunicationPage()
                     {
-                        Title = "ssh connection"
+                        Title = "Connecting to Raspi etc."
                     };
                     break;
             }
@@ -54,7 +54,7 @@ namespace GuessMyMusic.MainPages
             Children.Add(tapPage);
             Children.Add(historyPage);
             Children.Add(genreListPage);
-            Children.Add(sshControllingPage);
+            Children.Add(communicationPage);
 
             Title = Children[0].Title;
         }

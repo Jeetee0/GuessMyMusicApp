@@ -6,13 +6,9 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <!--entry-->
                 <RowDefinition Height="Auto" />
-                <!--execute button-->
                 <RowDefinition Height="Auto" />
-                <!--label-->
                 <RowDefinition Height="Auto" />
-                <!--predefine buttons-->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -23,7 +19,7 @@
             <Entry x:Name="commandEntry2" Placeholder="enter command" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" />
             <Entry x:Name="commandEntry3" Placeholder="enter command" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" />
 
-            <Button Text="execute Command" Clicked="handleExecute" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" />
+            <Button x:Name="executeButton" Text="execute Command" Clicked="handleExecute" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" />
             <Label Text="Predefined Commands:" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" />
             <Button Text="start disco" Clicked="handlePredefine" Grid.Column="0" Grid.Row="5" />
             <Button Text="" Clicked="handlePredefine" Grid.Column="1" Grid.Row="5" />

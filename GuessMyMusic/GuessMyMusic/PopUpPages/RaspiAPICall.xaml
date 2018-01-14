@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.PopUpPages.RaspiAPICall">
+	<ContentPage.Content>
+        <Grid Padding="5,10,5,10" VerticalOptions="Center" ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />       <!--entry-->
+                <RowDefinition Height="1*" />       <!--entry-->
+                <RowDefinition Height="0.5*" />     <!--label-->
+                <RowDefinition Height="1*" />       <!--entry-->
+                <RowDefinition Height="1*" />       <!--entry-->
+                <RowDefinition Height="1*" />       <!--connect button-->
+                <RowDefinition Height="0.5*" />     <!--label-->
+                <RowDefinition Height="1*" />       <!--predefine buttons-->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="ipEntry" Text="" Placeholder="192.168.1.1" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" />
+            <Entry x:Name="portEntry" Text="" Placeholder="8080" Grid.Column="3" Grid.Row="0" />
+            <Entry x:Name="pathEntry" Text="" Placeholder="/controlRaspberry" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" />
+            <Label Text="query params:" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2" />
+            <Entry x:Name="paramEntry1" Text="" Placeholder="cycles=0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" />
+            <Entry x:Name="paramEntry2" Text="" Placeholder="delay=150" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" />
+            <Entry x:Name="paramEntry3" Text="" Placeholder="msg=get ready" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" />
+            <Entry x:Name="paramEntry4" Text="" Placeholder="filename=Tunnel.txt" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4" />
+
+            <Button x:Name="sendButton" Text="send request" Clicked="handleSendRequest" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="5" />
+            <Label Text="Predefined Commands:" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" />
+            <Button Text="disco home" Clicked="handlePredefine" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" />
+            <Button Text="disco uni" Clicked="handlePredefine" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="7" />
+        </Grid>
+	</ContentPage.Content>
+</ContentPage>

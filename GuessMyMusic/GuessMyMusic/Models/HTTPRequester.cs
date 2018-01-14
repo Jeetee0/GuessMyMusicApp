@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.Http;
@@ -7,35 +9,88 @@ using Newtonsoft.Json;
 
 namespace GuessMyMusic.Models
 {
-    public static class HTTPRequester
+    public class HTTPRequester
     {        
-        static HttpClient client = new HttpClient();
+        HttpClient client;
+        string uri;
+        string response;
 
-        //i am calling rhythm api
-        //created account at https://developer.gracenote.com/rhythm-api and got my id and tag from there
+        public string Response { get => response; set => response = value; }
 
-        //also found out that this api has not really electronic genre in their database
-        //switching focus to http request to rapsberry
-        static string clientID = "1585897499";
-        static string clientTag = "13BBC26B9EEA8FB7B770CA12261A22C4";
-        static string userId;
-        static string personalizedUrl = "https://c" + clientID + ".web.cddbp.net/webapi/json/1.0/";
+        public HTTPRequester(string ip, string port, string path, List<string> queryParams) {
+            client = new HttpClient();
 
+            if (queryParams == null)
+                uri = BuildUri(ip, port, path);
+            else 
+                uri = BuildUri(ip, port, path, queryParams);
+        }
 
-        async public static Task<JContainer> RegisterRequest() {
-            string uri = personalizedUrl + "register?client=" + clientID + "-" + clientTag;
-            //build uri string with genre
-            var response = await client.GetAsync(uri).ConfigureAwait(false);
-            JContainer data = null;
+        async public Task<string> SendRequest(bool waitForResponse) {
 
-            if (response != null) {
-                //request is giving me timeout
-                string json = response.Content.ReadAsStringAsync().Result;
-                data = (JContainer)JsonConvert.DeserializeObject(json);
+            client.Timeout = new TimeSpan(0, 3, 0);
+            if (waitForResponse)
+            {
+                var responseNew = await client.GetStringAsync(uri);
+                Response = responseNew;
+                return Response;
             }
-            var jObj = (JObject)data;
-            var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(jObj.ToString());
-            return data;
+            client.GetStringAsync(uri);
+            return "successfully send request";
+        }
+
+        static string BuildUri(string ip, string port, string path)
+        {
+            StringBuilder uri = new StringBuilder("");
+            uri.Append("http://");
+            uri.Append(ip);
+            uri.Append(":" + port);
+            uri.Append(path);
+            return uri.ToString();
+        }
+
+        static string BuildUri(string ip, string port, string path, List<string> queryParams) {
+            StringBuilder uri = new StringBuilder("");
+            uri.Append("http://");
+            uri.Append(ip);
+            uri.Append(":" + port);
+            uri.Append(path);
+
+            if (queryParams.Count != 0) {
+                uri.Append("?");
+                foreach (var queryParam in queryParams)
+                {
+                    uri.Append(queryParam + "&");
+                }
+            }
+            return uri.ToString();
+        }
+
+        async public Task<List<string>> SendRequestGetStringList() {
+            string response = await client.GetStringAsync(uri);
+
+            //wrote my own parser because its only a json with list of strings
+            List<string> listOfInterpretes = new List<string>();
+
+            response = removeSpecialCharacters(response, "[]\\\"");
+            string[] interpretes = response.Split(',');
+
+            foreach (var item in interpretes)
+                listOfInterpretes.Add(item);
+            return listOfInterpretes;
+        }
+
+        static string removeSpecialCharacters(string str, string removeableChars)
+        {
+            StringBuilder returnValue = new StringBuilder("");
+            foreach (char c in str)
+            {
+                if (!removeableChars.Contains(c.ToString()))
+                {
+                    returnValue.Append(c);
+                }
+            }
+            return returnValue.ToString();
         }
     }
 }

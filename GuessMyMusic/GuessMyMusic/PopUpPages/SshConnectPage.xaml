@@ -17,11 +17,11 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             
-            <Entry x:Name="hostEntry" Placeholder="host/ip" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"/>
-            <Entry x:Name="portEntry" Placeholder="port" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"/>
-            <Entry x:Name="usernameEntry" Placeholder="username" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
-            <Entry x:Name="pwdEntry" IsPassword="true" Placeholder="password" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3"/>
-            <Button Text="Connect" Clicked="handleConnect" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4"/>
+            <Entry x:Name="hostEntry" Text="" Placeholder="host/ip" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"/>
+            <Entry x:Name="portEntry" Text="" Placeholder="port" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"/>
+            <Entry x:Name="usernameEntry" Text="" Placeholder="username" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
+            <Entry x:Name="pwdEntry" Text="" IsPassword="true" Placeholder="password" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3"/>
+            <Button x:Name="connectButton" Text="Connect" Clicked="handleConnect" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4"/>
             <Label Text="Predefined Connections:" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5"/>
             <Button Text="Raspi Home" Clicked="handlePredefine" Grid.Column="0" Grid.Row="6"/>
             <Button Text="Raspi Uni" Clicked="handlePredefine" Grid.Column="1" Grid.Row="6"/>

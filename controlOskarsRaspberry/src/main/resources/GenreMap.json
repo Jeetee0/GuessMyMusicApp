@@ -1,0 +1,184 @@
+[
+  {
+    "interpretes": [
+      "Eminem", 
+      "Snoop Dogg", 
+      "Tupac Shakur"
+    ], 
+    "name": "Hip-Hop"
+  }, 
+  {
+    "interpretes": [
+      "Eminem", 
+      "Snoop Dogg", 
+      "Tupac Shakur"
+    ], 
+    "name": "Reggae"
+  }, 
+  {
+    "interpretes": [
+      "Massive Attack", 
+      "Morcheeba", 
+      "Hooverphonic"
+    ], 
+    "name": "Triphop"
+  }, 
+  {
+    "interpretes": [
+      "Schiller", 
+      "Carbon Based Lifeforms", 
+      "Aes Dana"
+    ], 
+    "name": "Ambient"
+  }, 
+  {
+    "interpretes": [
+      "Bonobo", 
+      "Thievery Corporation", 
+      "Moby"
+    ], 
+    "name": "Chillout"
+  }, 
+  {
+    "interpretes": [
+      "Astronaut Ape", 
+      "Parov Stelar", 
+      "Paul Kalkbrenner"
+    ], 
+    "name": "Downtempo"
+  }, 
+  {
+    "interpretes": [
+      "David Guetta", 
+      "Robin Schulz", 
+      "Eric Prydz"
+    ], 
+    "name": "House"
+  }, 
+  {
+    "interpretes": [
+      "Oliver Heldens", 
+      "Klingande", 
+      "Felix Jaehn"
+    ], 
+    "name": "Deep House"
+  }, 
+  {
+    "interpretes": [
+      "Plastic Plates", 
+      "Cut Snake", 
+      "Dominik Eulberg"
+    ], 
+    "name": "Tech House"
+  }, 
+  {
+    "interpretes": [
+      "Avicii", 
+      "David Guetta", 
+      "Axwell"
+    ], 
+    "name": "Progressive House"
+  }, 
+  {
+    "interpretes": [
+      "Armin van Buuren", 
+      "Tiesto", 
+      "Above & Beyond"
+    ], 
+    "name": "Trance"
+  }, 
+  {
+    "interpretes": [
+      "Carl Cox", 
+      "Adam Beyer", 
+      "Dr. Motte"
+    ], 
+    "name": "Techno"
+  }, 
+  {
+    "interpretes": [
+      "Johnny Jungle", 
+      "Renegade", 
+      "Dead Dred"
+    ], 
+    "name": "Jungle"
+  }, 
+  {
+    "interpretes": [
+      "Noisia", 
+      "Pendulum", 
+      "Chase & Status", 
+      "Feint"
+    ], 
+    "name": "Drum and Bass"
+  }, 
+  {
+    "interpretes": [
+      "Skrillex", 
+      "Flux Pavillion", 
+      "Skream"
+    ], 
+    "name": "Dubstep"
+  }, 
+  {
+    "interpretes": [], 
+    "name": "Trap"
+  }, 
+  {
+    "interpretes": [
+      "Spirit Architect", 
+      "bla1", 
+      "bla2"
+    ], 
+    "name": "Psychedelic Trance"
+  }, 
+  {
+    "interpretes": [
+      "Spirit Architect", 
+      "bla1", 
+      "bla2"
+    ], 
+    "name": "Full-On (PsyTrance)"
+  }, 
+  {
+    "interpretes": [
+      "Aardvarkk", 
+      "Jumpstreet"
+    ], 
+    "name": "Forest"
+  }, 
+  {
+    "interpretes": [
+      "Leopardtron", 
+      "Triplock"
+    ], 
+    "name": "Dark Psytrance"
+  }, 
+  {
+    "interpretes": [
+      "Scotter", 
+      "Brennan Heart", 
+      "Showtek", 
+      "Zatox", 
+      "Noisecontrollers", 
+      "Coone", 
+      "Frontliner"
+    ], 
+    "name": "Hardstyle"
+  }, 
+  {
+    "interpretes": [
+      "Angerfist", 
+      "Evil Activities", 
+      "Endymion"
+    ], 
+    "name": "Hardcore/Gabber"
+  }, 
+  {
+    "interpretes": [
+      "The Shapeshifter", 
+      "Interrupt Vector"
+    ], 
+    "name": "Speedcore"
+  }
+]

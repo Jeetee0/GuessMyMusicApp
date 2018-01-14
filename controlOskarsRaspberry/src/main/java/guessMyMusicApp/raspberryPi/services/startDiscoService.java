@@ -40,7 +40,7 @@ public class startDiscoService {
             commands.add("--filename");
             commands.add(filename);
         }
-        
+
         shellController.executeCommand(workingDir, commands, false);
 
         String executedCommand = "";
@@ -98,7 +98,7 @@ public class startDiscoService {
         response.append("Raspberry pi started the Disco. Hell yeah!\n");
         response.append("executed command at: " + workingDir + "\n");
         response.append("executed command: " + executedCommand + "\n\n");
-        response.append("response: " + responseFromShell);
+        response.append("response:\n" + responseFromShell);
         return Response.ok(response.toString()).build();
     }
 }

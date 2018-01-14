@@ -2,9 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.PopUpPages.GenreInfoPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="5,5,5,5">
-                <Label x:Name="bpmLabel" />
+            <StackLayout Padding="10,5,10,5" Spacing="8">
+                <Label x:Name="bpmLabel" FontAttributes="Bold"/>
+                <Label Text="Meaningful Interpretes for this genre:" FontAttributes="Bold"/>
+                <StackLayout x:Name="interpreteSL" Orientation="Vertical">
+                </StackLayout>
+                <Label Text="Extracted from Wikipedia:" FontAttributes="Bold"/>
                 <Label x:Name="genreInfoLabel" />
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

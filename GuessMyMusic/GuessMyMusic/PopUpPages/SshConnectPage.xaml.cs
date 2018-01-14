@@ -11,21 +11,31 @@ namespace GuessMyMusic.PopUpPages
 {
     public partial class SshConnectPage : ContentPage
     {
-        ISshConnector sshConnection;
         public SshConnectPage()
         {
             InitializeComponent();
-            this.sshConnection = SshControllingPage.sshConnection;
+            if (!CommunicationPage.sshConnection.Connected)
+                connectButton.IsEnabled = true;
         }
 
         async void handleConnect(object sender, EventArgs e) {
-            Task<string> task = sshConnection.Connect(hostEntry.Text, portEntry.Text, usernameEntry.Text, pwdEntry.Text);
-            task.Wait();
-            string msg = task.Result;
-            await DisplayAlert("ssh Connection", msg, "Ok");
-            //set parent object to value
-            SshControllingPage.sshConnection = sshConnection;
-            await Navigation.PopAsync();
+            if (hostEntry.Text.Equals("") || portEntry.Text.Equals("") || usernameEntry.Text.Equals("") || pwdEntry.Text.Equals(""))
+                await DisplayAlert("Alert", "Please enter values to every entry before trying to connect.", "Ok");
+            else {
+                connectButton.IsEnabled = false;
+                Task<string> task = CommunicationPage.sshConnection.Connect(hostEntry.Text, portEntry.Text, usernameEntry.Text, pwdEntry.Text);
+                task.Wait();
+                string msg = task.Result;
+                await DisplayAlert("ssh Connection", msg, "Ok");
+
+                //if successfull: close page, else enable button again
+                if (msg.StartsWith("Successfully"))
+                    await Navigation.PopAsync();
+                else {
+                    connectButton.IsEnabled = true;
+                }
+            }
+
         }
 
         void handlePredefine(object sender, EventArgs e) {

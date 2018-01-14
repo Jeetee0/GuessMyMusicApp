@@ -14,7 +14,7 @@ namespace GuessMyMusic.PopUpPages
         public SshCommandPage()
         {
             InitializeComponent();
-            this.sshConnection = SshControllingPage.sshConnection;
+            this.sshConnection = CommunicationPage.sshConnection;
 
             if (!sshConnection.Connected) {
                 DisplayAlert("Alert", "Please connect to a device before sending a message.", "Ok");
@@ -23,14 +23,17 @@ namespace GuessMyMusic.PopUpPages
         }
 
         async void handleExecute(object sender, EventArgs e) {
+            executeButton.IsEnabled = false;
             string command = buildCommand();
 
             if (!command.Equals("")) {
                 Task<string> task = sshConnection.RunCommandAsync(command);
-                task.Wait();
-                string msg = task.Result;
-                await DisplayAlert("Successfully executed command", msg, "Ok");
+                //task.Wait();
+                //string msg = task.Result;
+                await DisplayAlert("Successfully executed command", "not waiting for response message", "Ok");
+                await Navigation.PopAsync();
             }
+            executeButton.IsEnabled = true;
         }
 
         void handlePredefine(object sender, EventArgs e) {
@@ -38,7 +41,7 @@ namespace GuessMyMusic.PopUpPages
             Button clickedButton = (Button)sender;
             if (clickedButton.Text.Equals("start disco")) {
                 commandEntry.Text = "cd Projects/FrameModifier9001/FrameViewer";
-                commandEntry2.Text = "python print_frames.py --cycles 4 --delay " + TappingPage.avg;
+                commandEntry2.Text = "python print_frames.py --cycles 0 --delay " + TappingPage.avg;
                 commandEntry3.Text = "";
 
             } else if (clickedButton.Text == "empty") {

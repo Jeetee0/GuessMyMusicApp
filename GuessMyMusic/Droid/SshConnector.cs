@@ -30,11 +30,6 @@ namespace GuessMyMusic.Droid
         string _username = "pi";
         string _pwd = "rofl";
 
-        string cdToProject = "cd Projects/FrameModifier9001/FrameViewer";
-        //string makeDir = "mkdir testFolder";
-        string executePython = "python print_frames.py";
-        string param;
-
         public bool Connected { get => connected; set => connected = value; }
 
         public Task<string> Connect(string host, string port, string username, string pwd)

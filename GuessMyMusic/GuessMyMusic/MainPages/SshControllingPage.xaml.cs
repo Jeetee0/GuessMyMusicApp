@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 
 using GuessMyMusic.PopUpPages;
+using GuessMyMusic.Models;
 
 namespace GuessMyMusic.MainPages
 {
@@ -39,6 +40,10 @@ namespace GuessMyMusic.MainPages
             sshConnection.Disconnect();
             DisplayAlert("Alert", "Disconnected from" + Environment.NewLine + sshConnection.ToString(), "Ok");
             Navigation.PopAsync();
+        }
+
+        async void handleAPICall(object sender, EventArgs e) {
+            await HTTPRequester.RegisterRequest();
         }
     }
 }

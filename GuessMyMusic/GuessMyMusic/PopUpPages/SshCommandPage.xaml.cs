@@ -23,7 +23,8 @@ namespace GuessMyMusic.PopUpPages
         }
 
         async void handleExecute(object sender, EventArgs e) {
-            string command = commandEntry.Text;
+            string command = buildCommand();
+
             if (!command.Equals("")) {
                 Task<string> task = sshConnection.RunCommandAsync(command);
                 task.Wait();
@@ -36,8 +37,38 @@ namespace GuessMyMusic.PopUpPages
 
             Button clickedButton = (Button)sender;
             if (clickedButton.Text.Equals("start disco")) {
-                commandEntry.Text = "python print_frames.py --delay " + TappingPage.avg;
+                commandEntry.Text = "cd Projects/FrameModifier9001/FrameViewer";
+                commandEntry2.Text = "python print_frames.py --cycles 4 --delay " + TappingPage.avg;
+                commandEntry3.Text = "";
+
+            } else if (clickedButton.Text == "empty") {
+                commandEntry.Text = "";
+                commandEntry2.Text = "";
+                commandEntry3.Text = "";
             }
         } 
+
+        private string buildCommand() {
+            string command = "";
+            if (!commandEntry.Text.Equals(""))
+                command += commandEntry.Text;
+            
+            if (!commandEntry2.Text.Equals(""))
+            {
+                if (command.Equals(""))
+                    command += commandEntry2.Text;
+                else
+                    command += " && " + commandEntry2.Text;
+            }
+
+            if (!commandEntry3.Text.Equals("")) {
+                if (command.Equals(""))
+                    command += commandEntry3.Text;
+                else
+                    command += " && " + commandEntry3.Text; 
+            }
+
+            return command;
+        }
     }
 }

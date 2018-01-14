@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="controlOskarsRaspberry:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="controlOskarsRaspberryPi.war">
-      <element id="artifact" artifact-name="controlOskarsRaspberry:war exploded" />
-    </root>
-  </artifact>
-</component>

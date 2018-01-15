@@ -14,6 +14,7 @@ namespace GuessMyMusic.MainPages
         static ObservableCollection<Tap> tapsList = new ObservableCollection<Tap>();
         static IFolder rootFolder = FileSystem.Current.LocalStorage;
         static string tapsFileName = "taps.csv";
+        static string infoMessage = "Click on one of your Taps to edit it.";
 
         public static ObservableCollection<Tap> TapsList { get => tapsList; set => tapsList = value; }
 
@@ -24,6 +25,7 @@ namespace GuessMyMusic.MainPages
         {
             InitializeComponent();
             ReadTaps();
+            infoLabel.Text = infoMessage;
         }
 
         async void ReadTaps() {

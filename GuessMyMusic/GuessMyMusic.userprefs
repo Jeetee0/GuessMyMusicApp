@@ -1,18 +1,13 @@
 ﻿<Properties StartupConfiguration="{5E53FD35-44BE-40A8-927A-DB6B5B076E20}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="GuessMyMusic/MainPages/GenreOverviewPage.xaml">
     <Files>
-      <File FileName="GuessMyMusic/PopUpPages/GenreInfoPage.xaml.cs" Line="52" Column="32" />
-      <File FileName="GuessMyMusic/PopUpPages/GenreInfoPage.xaml" Line="11" Column="48" />
-      <File FileName="GuessMyMusic/PopUpPages/SshConnectPage.xaml.cs" Line="31" Column="71" />
-      <File FileName="GuessMyMusic/MainPages/CommunicationPage.xaml.cs" Line="17" Column="35" />
-      <File FileName="GuessMyMusic/Models/HTTPRequester.cs" Line="38" Column="13" />
-      <File FileName="GuessMyMusic/PopUpPages/SshCommandPage.xaml.cs" Line="44" Column="72" />
-      <File FileName="GuessMyMusic/Models/RhythmApi.cs" Line="23" Column="23" />
-      <File FileName="GuessMyMusic/PopUpPages/SshConnectPage.xaml" Line="23" Column="46" />
-      <File FileName="GuessMyMusic/Models/ISshConnector.cs" Line="11" Column="22" />
-      <File FileName="Droid/FileHelper.cs" Line="1" Column="1" />
-      <File FileName="Droid/SshConnector.cs" Line="74" Column="43" />
-      <File FileName="GuessMyMusic/PopUpPages/SshCommandPage.xaml" Line="22" Column="42" />
+      <File FileName="GuessMyMusic/obj/Debug/GuessMyMusic.MainPages.HistoryPage.xaml.g.cs" Line="1" Column="1" />
+      <File FileName="GuessMyMusic/MainPages/HistoryPage.xaml" Line="15" Column="24" />
+      <File FileName="GuessMyMusic/MainPages/HistoryPage.xaml.cs" Line="28" Column="22" />
+      <File FileName="GuessMyMusic/MainPages/GenreOverviewPage.xaml" Line="14" Column="42" />
+      <File FileName="GuessMyMusic/MainPages/GenreOverviewPage.xaml.cs" Line="26" Column="35" />
+      <File FileName="GuessMyMusic/PopUpPages/GenreInfoPage.xaml" Line="16" Column="15" />
+      <File FileName="GuessMyMusic/PopUpPages/GenreInfoPage.xaml.cs" Line="69" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

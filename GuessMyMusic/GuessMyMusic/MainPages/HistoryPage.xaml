@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.MainPages.HistoryPage">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Grid Padding="10,5,5,0">
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5,5,5,0">            
+            <Grid Padding="5,5,5,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.5*" />
                     <ColumnDefinition Width="5*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Bpm" VerticalOptions="Center" FontAttributes="Bold" />
-                <Label Grid.Column="1" Text="Genre" VerticalOptions="Center" FontAttributes="Bold" />
-                <Label Grid.Column="2" Text="Date" VerticalOptions="Center" FontAttributes="Bold" />
+                <Label x:Name="infoLabel" XAlign="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Bpm" VerticalOptions="Center" FontAttributes="Bold" />
+                <Label Grid.Row="1" Grid.Column="1" Text="Genre" VerticalOptions="Center" FontAttributes="Bold" />
+                <Label Grid.Row="1" Grid.Column="2" Text="Date" VerticalOptions="Center" FontAttributes="Bold" />
             </Grid>
-            <ScrollView VerticalOptions="FillAndExpand">
+            <ScrollView>
                 <ListView x:Name="tapsListView" ItemSelected="Handle_ItemSelected" SeparatorColor="Black">
                     <ListView.ItemTemplate>
                         <DataTemplate>

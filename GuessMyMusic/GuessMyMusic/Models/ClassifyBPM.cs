@@ -12,6 +12,13 @@ namespace GuessMyMusic.Models
         public static Tap ClassifyBpmValue(Tap currentTap) {
             List<Genre> genreList = MainPages.GenreOverviewPage.GenreList;
             int bpm = currentTap.Bpm;
+
+            //easter egg
+            if (bpm >= 500) {
+                currentTap.Genre = "Well clicked, Sir (or Madam).";
+                return currentTap;
+            }
+
             string bestGenre = "";
             int difference;
             int smallestDifference = 100;

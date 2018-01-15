@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.Http;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 
 namespace GuessMyMusic.Models
 {
@@ -28,12 +25,11 @@ namespace GuessMyMusic.Models
 
         async public Task<string> SendRequest(bool waitForResponse) {
 
-            client.Timeout = new TimeSpan(0, 3, 0);
+            client.Timeout = new TimeSpan(0, 1, 0);
             if (waitForResponse)
             {
                 var responseNew = await client.GetStringAsync(uri);
-                Response = responseNew;
-                return Response;
+                return responseNew;
             }
             client.GetStringAsync(uri);
             return "successfully send request";
@@ -67,13 +63,13 @@ namespace GuessMyMusic.Models
         }
 
         async public Task<List<string>> SendRequestGetStringList() {
-            string response = await client.GetStringAsync(uri);
+            string responseNew = await client.GetStringAsync(uri);
 
             //wrote my own parser because its only a json with list of strings
             List<string> listOfInterpretes = new List<string>();
 
-            response = removeSpecialCharacters(response, "[]\\\"");
-            string[] interpretes = response.Split(',');
+            responseNew = removeSpecialCharacters(responseNew, "[]\\\"");
+            string[] interpretes = responseNew.Split(',');
 
             foreach (var item in interpretes)
                 listOfInterpretes.Add(item);

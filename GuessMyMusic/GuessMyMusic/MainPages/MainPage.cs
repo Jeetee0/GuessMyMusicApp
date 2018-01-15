@@ -42,7 +42,7 @@ namespace GuessMyMusic.MainPages
                     };
                     genreListPage = new GenreOverviewPage()
                     {
-                        Title = "List of Genres"
+                        Title = "Genres Overview"
                     };
                     communicationPage = new CommunicationPage()
                     {

@@ -41,7 +41,7 @@ namespace GuessMyMusic.PopUpPages
             Button clickedButton = (Button)sender;
             if (clickedButton.Text.Equals("start disco")) {
                 commandEntry.Text = "cd Projects/FrameModifier9001/FrameViewer";
-                commandEntry2.Text = "python print_frames.py --cycles 0 --delay " + TappingPage.avg;
+                commandEntry2.Text = "python print_frames.py --cycles 1 --delay " + TappingPage.avg;
                 commandEntry3.Text = "";
 
             } else if (clickedButton.Text == "empty") {

@@ -11,12 +11,12 @@
                     <ColumnDefinition Width="4*" />
                     <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-                <Label x:Name="infoLabel" XAlign="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                <Label Grid.Column="0" Grid.Row="1" Text="Name" VerticalOptions="Center" FontAttributes="Bold" />
-                <Label Grid.Column="1" Grid.Row="1" Text="Bpm range" VerticalOptions="Center" FontAttributes="Bold" />
+                <Label x:Name="infoLabel" XAlign="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" />
+                <Label Grid.Column="0" Grid.Row="1" Text="Name" VerticalOptions="Center" FontAttributes="Bold" FontSize="16" />
+                <Label Grid.Column="1" Grid.Row="1" Text="Bpm range" VerticalOptions="Center" FontAttributes="Bold" FontSize="16" />
             </Grid>
             <ScrollView VerticalOptions="FillAndExpand">
-                <ListView x:Name="genresListView" ItemSelected="Handle_ItemSelected" SeparatorColor="Black">
+                <ListView x:Name="genresListView" ItemSelected="Handle_ItemSelected" SeparatorColor="Black" VerticalOptions="FillAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

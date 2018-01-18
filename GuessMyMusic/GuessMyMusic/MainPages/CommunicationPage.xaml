@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.MainPages.CommunicationPage">
-	<ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
-            <Button Text="Connect to device" Clicked="handleConnect" />
-            <Button x:Name="commandButton" Text="Send Command" Clicked="handleSendCommand" />
-            <Button Text="Close connection" Clicked="handleDisconnect" />
+    <ContentPage.Content>
+        <Grid Padding="5,10,5,10" VerticalOptions="Center" ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*" /><!--fill-->
+                <RowDefinition Height="0.5*" /><!--infoLabel-->
+                <RowDefinition Height="0.7*" /><!--fill-->
+                <RowDefinition Height="0.5*" /><!--label: http request-->
+                <RowDefinition Height="1*" /><!--button-->
+                <RowDefinition Height="0.7*" /><!--fill-->
+                <RowDefinition Height="0.5*" /><!--label: walking lights-->
+                <RowDefinition Height="1*" /><!--button-->
+                <RowDefinition Height="1*" /><!--button-->
+                <RowDefinition Height="1*" /><!--button-->
+                <RowDefinition Height="0.6*" /><!--fill-->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Connect to your Raspberry Pi" XAlign="Center" FontAttributes="Bold" FontSize="18"/>
             <Label/>
-            <Button Text="Make API call" Clicked="handleAPICall"/>
-        </StackLayout>
+            <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="HTTP Request" XAlign="Center" FontAttributes="Bold" FontSize="16"/>
+            <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Text="Make API call" Clicked="handleAPICall" />
+            <Label/>
+            <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Text="SSH Connection" XAlign="Center" FontAttributes="Bold" FontSize="16"/>
+            <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Text="Connect to device" Clicked="handleConnect" />
+            <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" x:Name="commandButton" Text="Send Command" Clicked="handleSendCommand" />
+            <Button Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Text="Close connection" Clicked="handleDisconnect" />
+        </Grid>            
     </ContentPage.Content>
 </ContentPage>

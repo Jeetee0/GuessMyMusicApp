@@ -17,8 +17,11 @@ namespace GuessMyMusic.PopUpPages
         string genreInfo;
         List<string> interpreteList;
         //static string ip = "localhost";
-        static string ip = "192.168.178.30";        //raspi home
+        //static string ip = "192.168.178.30";        //raspi home
         //static string ip = "141.45.207.59";       //raspi uni
+
+        //using youris htw server for constant access
+        static string ip = "141.45.92.235";
 
         public GenreInfoPage(Genre genre)
         {
@@ -32,13 +35,13 @@ namespace GuessMyMusic.PopUpPages
             bpmLabel.Text = "BPM range: " + genre.BpmRange;
             genreInfoLabel.Text = genreInfo;
 
-            //api call to get interprets for selected genre
+            //api call to get interpreters for selected genre
             bool gotResponse = await GetInterprets();
             if (gotResponse)
             {
                 foreach (var item in interpreteList)
                 {
-                    interpreteSL.Children.Add(new Label { Text = "- " + item });
+                    interpreterSL.Children.Add(new Label { Text = "- " + item });
                 }
             }
 
@@ -51,9 +54,9 @@ namespace GuessMyMusic.PopUpPages
         }
 
         async private Task<bool> GetInterprets() {
-            string path = "/controlRasPi/genres/interprets/" + genre.Name;
+            string path = "/guessMyMusic/genres/interpreters/" + genre.Name;
             try {
-                HTTPRequester request = new HTTPRequester(ip, "8080", path, null);
+                HTTPRequester request = new HTTPRequester(ip, "8080", path);
                 this.interpreteList = await request.SendRequestGetStringList();
                 return true;
             } catch (Exception e) {
@@ -62,10 +65,10 @@ namespace GuessMyMusic.PopUpPages
         }
 
         async private Task<bool> getGenreInfo() {
-            string path = "/controlRasPi/genres/genreInfo/" + genre.Name;
+            string path = "/guessMyMusic/genres/genreInfo/" + genre.Name;
             try
             {
-                HTTPRequester request = new HTTPRequester(ip, "8080", path, null);
+                HTTPRequester request = new HTTPRequester(ip, "8080", path);
                 genreInfo = await request.SendRequest(true);
                 return true;
             }

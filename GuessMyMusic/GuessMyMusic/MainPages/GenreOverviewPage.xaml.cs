@@ -57,7 +57,7 @@ namespace GuessMyMusic.MainPages
             List<Genre> genreList = new List<Genre>();
             string text = await ReadFileContent(genresFileName);
             string[] lines = text.Split('\n');
-            for (int i = 0; i < lines.Length - 1; i++)
+            for (int i = 0; i < lines.Length; i++)
             {
                 //skip empty lines
                 if (lines[i] == "" || lines[i].StartsWith("\t") || lines[i].StartsWith("\r"))
@@ -73,7 +73,7 @@ namespace GuessMyMusic.MainPages
         {
             IFolder rootFolder = FileSystem.Current.LocalStorage;
             ExistenceCheckResult exist = await rootFolder.CheckExistsAsync(fileName);
-            DependencyService.Get<Models.IFileHelper>().CopyFileToPersonalFolder(fileName);
+            //DependencyService.Get<Models.IFileHelper>().CopyFileToPersonalFolder(fileName);
 
             string text = null;
             if (exist == ExistenceCheckResult.NotFound)

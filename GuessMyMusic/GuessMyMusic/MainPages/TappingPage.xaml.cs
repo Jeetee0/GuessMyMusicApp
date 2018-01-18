@@ -15,12 +15,23 @@ namespace GuessMyMusic.MainPages
         int bpm;
         DateTime lastDateTime = new DateTime();
         DateTime currentDateTime;
+        bool showElapsed;
 
         public TappingPage()
         {
             InitializeComponent();
             saveButton.IsEnabled = false;
+
+            var infoLabel_tap = new TapGestureRecognizer();
+            infoLabel_tap.Tapped += (s, e) =>
+            {
+                showElapsed = !showElapsed;
+            };
+            infoLabel.GestureRecognizers.Add(infoLabel_tap);
+
         }
+
+
 
         void on_bpmButtonClicked(object sender, EventArgs e)
         {
@@ -47,8 +58,10 @@ namespace GuessMyMusic.MainPages
                 //calculate avg of list
                 avg = Convert.ToInt32(listOfIntervals.Average());
                 bpm = 60000 / avg;
-                //bpmButton.Text = $"Elapsed Time: {Convert.ToInt32(elapsed)} ms\nBPM: {bpm}";
-                bpmButton.Text = $"BPM: {bpm}";
+                if (showElapsed)
+                    bpmButton.Text = $"Elapsed Time: {Convert.ToInt32(avg)} ms\nBPM: {bpm}";
+                else
+                    bpmButton.Text = $"BPM: {bpm}";
                 lastDateTime = currentDateTime;
             }
         }

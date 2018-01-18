@@ -1,4 +1,4 @@
-package guessMyMusicApp.raspberryPi.client;
+package raspberryPi.client;
 
 import org.glassfish.jersey.server.ResourceConfig;
 

@@ -4,8 +4,8 @@
         <ScrollView>
             <StackLayout Padding="10,5,10,5" Spacing="8">
                 <Label x:Name="bpmLabel" FontAttributes="Bold"/>
-                <Label Text="Meaningful Interpretes for this genre:" FontAttributes="Bold"/>
-                <StackLayout x:Name="interpreteSL" Orientation="Vertical">
+                <Label Text="Meaningful Interpreters for this genre:" FontAttributes="Bold"/>
+                <StackLayout x:Name="interpreterSL" Orientation="Vertical">
                 </StackLayout>
                 <Label Text="Extracted from Wikipedia:" FontAttributes="Bold"/>
                 <Label x:Name="genreInfoLabel" />

@@ -1,4 +1,4 @@
-package guessMyMusicApp.raspberryPi.shell;
+package raspberryPi.shell;
 
 import java.io.*;
 import java.util.List;

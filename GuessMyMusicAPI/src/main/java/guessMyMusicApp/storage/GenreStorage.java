@@ -1,8 +1,8 @@
-package guessMyMusicApp.raspberryPi.storage;
+package guessMyMusicApp.storage;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import guessMyMusicApp.raspberryPi.beans.Genre;
+import guessMyMusicApp.beans.Genre;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,7 +41,7 @@ public class GenreStorage {
         return instance;
     }
 
-    public Collection<String> getInterpretesForSpecificGenre(String genre) {
+    public Collection<String> getInterpretersForSpecificGenre(String genre) {
         if (storage.get(genre) != null)
             return storage.get(genre).getInterpretes();
         else
@@ -54,7 +54,7 @@ public class GenreStorage {
             return genreInfo;
         }
         else
-            return "genre not in database.";
+            return null;
     }
 
 }

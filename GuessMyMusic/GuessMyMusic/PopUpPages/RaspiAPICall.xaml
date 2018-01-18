@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.PopUpPages.RaspiAPICall">
-	<ContentPage.Content>
-        <Grid Padding="5,10,5,10" VerticalOptions="Center" ColumnSpacing="0" RowSpacing="0">
+    <ContentPage.Content>
+        <Grid Padding="5,5,5,5" VerticalOptions="Center" ColumnSpacing="0" RowSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />       <!--entry-->
-                <RowDefinition Height="1*" />       <!--entry-->
-                <RowDefinition Height="0.5*" />     <!--label-->
-                <RowDefinition Height="1*" />       <!--entry-->
-                <RowDefinition Height="1*" />       <!--entry-->
-                <RowDefinition Height="1*" />       <!--connect button-->
-                <RowDefinition Height="0.5*" />     <!--label-->
-                <RowDefinition Height="1*" />       <!--predefine buttons-->
+                <RowDefinition Height="0.6*" />
+                <!--fill-->
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.8*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <!--fill-->
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.8*" />
+                <RowDefinition Height="0.6*" />
+                <!--fill-->
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <!--fill-->
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <!--fill-->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -18,19 +30,29 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Entry x:Name="ipEntry" Text="" Placeholder="192.168.1.1" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" />
-            <Entry x:Name="portEntry" Text="" Placeholder="8080" Grid.Column="3" Grid.Row="0" />
-            <Entry x:Name="pathEntry" Text="" Placeholder="/controlRaspberry" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" />
-            <Label Text="query params:" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2" />
-            <Entry x:Name="paramEntry1" Text="" Placeholder="cycles=0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" />
-            <Entry x:Name="paramEntry2" Text="" Placeholder="delay=150" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" />
-            <Entry x:Name="paramEntry3" Text="" Placeholder="msg=get ready" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" />
-            <Entry x:Name="paramEntry4" Text="" Placeholder="filename=Tunnel.txt" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4" />
-
-            <Button x:Name="sendButton" Text="send request" Clicked="handleSendRequest" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="5" />
-            <Label Text="Predefined Commands:" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" />
-            <Button Text="disco home" Clicked="handlePredefine" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" />
-            <Button Text="disco uni" Clicked="handlePredefine" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="7" />
+            <Label />
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Text="Set ip address of Raspberry Pi:" FontAttributes="Bold" XAlign="Center" VerticalOptions="Center" FontSize="16" />
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Text="Host: " XAlign="Center" FontAttributes="Bold" VerticalOptions="Center" />
+            <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="ipEntry" Text="" Placeholder="192.168.1.1" />
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="raspi home" Clicked="handlePredefine" />
+            <Button Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Text="raspi uni" Clicked="handlePredefine" />
+            <Label />
+            <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Text="Predefined patterns:" FontAttributes="Bold" XAlign="Center" FontSize="16" />
+            <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" x:Name="pattern1Button" Text="Big tunnel in" Clicked="handlePredefinePatterns" />
+            <Button Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" x:Name="pattern2Button" Text="Building lines" Clicked="handlePredefinePatterns" />
+            <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="pattern3Button" Text="4 tunnel" Clicked="handlePredefinePatterns" />
+            <Button Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" x:Name="pattern4Button" Text="Matrix" Clicked="handlePredefinePatterns" />
+            <Label />
+            <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Text="Walking lights (starts from):" XAlign="Center" FontAttributes="Bold" VerticalOptions="Center" FontSize="16" />
+            <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="1" x:Name="leftButton" Text="left" Clicked="handleWalkingLight" />
+            <Button Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="1" x:Name="rightButton" Text="right" Clicked="handleWalkingLight" />
+            <Button Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="1" x:Name="topButton" Text="top" Clicked="handleWalkingLight" />
+            <Button Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="1" x:Name="bottomButton" Text="bottom" Clicked="handleWalkingLight" />
+            <Label />
+            <Label Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4" Text="Optional parameters:" XAlign="Center" FontAttributes="Bold" FontSize="16" />
+            <Entry Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" x:Name="delayEntry" Text="" Placeholder="delay (in ms)" />
+            <Entry Grid.Row="13" Grid.Column="2" Grid.ColumnSpan="2" x:Name="cyclesEntry" Text="" Placeholder="cycles" />
+            <Label />
         </Grid>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

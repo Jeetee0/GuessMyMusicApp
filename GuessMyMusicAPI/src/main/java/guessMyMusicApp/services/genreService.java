@@ -1,6 +1,6 @@
-package guessMyMusicApp.raspberryPi.services;
+package guessMyMusicApp.services;
 
-import guessMyMusicApp.raspberryPi.storage.GenreStorage;
+import guessMyMusicApp.storage.GenreStorage;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -11,10 +11,10 @@ import java.util.*;
 public class genreService {
 
     @GET
-    @Path("/interprets/{genre}")
+    @Path("/interpreters/{genre}")
     @Produces({MediaType.APPLICATION_JSON})
     public Collection<String> getInterpretsForGenre(@PathParam("genre") String genre) {
-        return GenreStorage.getInstance().getInterpretesForSpecificGenre(genre);
+        return GenreStorage.getInstance().getInterpretersForSpecificGenre(genre);
     }
 
     @GET

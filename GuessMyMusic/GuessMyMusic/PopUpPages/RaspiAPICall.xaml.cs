@@ -12,59 +12,106 @@ namespace GuessMyMusic.PopUpPages
     public partial class RaspiAPICall : ContentPage
     {
         List<string> paramList = new List<string>();
+        string prefixPath = "/controlRasPi/disco";
+        string raspiUniIp;
 
         public RaspiAPICall()
         {
             InitializeComponent();
+            getRaspiIp();
+            delayEntry.Text = TappingPage.avg.ToString();
         }
 
-        async public void handleSendRequest(object sender, EventArgs e) {
-            if (ipEntry.Text.Equals("") || portEntry.Text.Equals("") || pathEntry.Text.Equals(""))
-                await DisplayAlert("Alert", "Please enter values to ip, port and path entries", "Ok");
-            else {
-                sendButton.IsEnabled = false;
+        async void SendRequest(string path)
+        {
+            if (ipEntry.Text.Equals(""))
+                await DisplayAlert("Alert", "Please enter a valid host before sending a request.", "Ok");
+            else
+            {
+                EnableDisableButtons(false);
 
-                //get params
-                paramList.Clear();
-                if (!paramEntry1.Text.Equals(""))
-                    paramList.Add(paramEntry1.Text);
-                if (!paramEntry2.Text.Equals(""))
-                    paramList.Add(paramEntry2.Text);
-                if (!paramEntry3.Text.Equals(""))
-                    paramList.Add(paramEntry3.Text);
-                if (!paramEntry4.Text.Equals(""))
-                    paramList.Add(paramEntry4.Text);
+                string host = ipEntry.Text;
+                string cycles = cyclesEntry.Text;
+                string delay = delayEntry.Text;
+                if (!cycles.Equals(""))
+                    paramList.Add("cycles=" + cycles);
+                if (!delay.Equals(""))
+                    paramList.Add("delay=" + delay);
 
-                HTTPRequester request = new HTTPRequester(ipEntry.Text, portEntry.Text, pathEntry.Text, paramList);
+                HTTPRequester request = new HTTPRequester(ipEntry.Text, "8080", prefixPath + path, paramList);
                 string response;
 
-                try {
-                    //if delay is set more then 500 the demo takes to long. so we wont wait for the response
-                    if (TappingPage.avg >= 500 && pathEntry.Text.Equals("/controlRasPi/disco/wait"))
-                        response = await request.SendRequest(false);
-                    else
-                        response = await request.SendRequest(true);
+                try
+                {
+                    response = await request.SendRequest(true);
                     await DisplayAlert("HTTP Response", response, "Ok");
-                } catch (TaskCanceledException tce) {
+                }
+                catch (TaskCanceledException tce)
+                {
                     await DisplayAlert("Alert", "No response from server", "Ok");
                 }
 
-                sendButton.IsEnabled = true;
+                EnableDisableButtons(true);
+            }
+            paramList.Clear();
+        }
+
+
+        public void handlePredefine(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            if (clickedButton.Text.Equals("raspi home"))
+            {
+                ipEntry.Text = "192.168.178.30";
+            }
+            else if (clickedButton.Text.Equals("raspi uni"))
+            {
+                ipEntry.Text = raspiUniIp;
             }
         }
 
-        public void handlePredefine(object sender, EventArgs e) {
+        public void handleWalkingLight(object sender, EventArgs e)
+        {
             Button clickedButton = (Button)sender;
-            if (clickedButton.Text.Equals("disco home")) {
-                ipEntry.Text = "192.168.178.30";
-            } else if (clickedButton.Text.Equals("disco uni")) {
-                ipEntry.Text = "141.45.207.59";
+            paramList.Add("start=" + clickedButton.Text);
+            SendRequest("/lauflicht");
+        }
+
+        public void handlePredefinePatterns(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            string text = clickedButton.Text;
+            if (text.Equals("Big tunnel in"))
+                paramList.Add("filename=BigTunnelIn.txt");
+            else if (text.Equals("Building lines"))
+                paramList.Add("filename=BuildingLinesStartingBottomRight.txt");
+            else if (text.Equals("4 tunnel"))
+                paramList.Add("filename=TunnelSchnellHinUndHer.txt");
+            else {
+                //Matrix
+                paramList.Add("filename=Matrix.txt");
             }
-            portEntry.Text = "8080";
-            pathEntry.Text = "/controlRasPi/disco/wait";
-            paramEntry2.Text = "delay=" + TappingPage.avg;
+            paramList.Add("mirror=True");
+            SendRequest("/standard/wait");
+        }
 
+        async void getRaspiIp() {
+            //if oskars raspi is starting it sends a request to youris server, stating its ip address
+            //i can then get the ip of the raspi from youris server
 
+            HTTPRequester client = new HTTPRequester("141.45.92.235", "8080", "/guessMyMusic/ip");
+            raspiUniIp = await client.SendRequest(true);
+        }
+
+        void EnableDisableButtons(bool enable) {
+            pattern1Button.IsEnabled = enable;
+            pattern2Button.IsEnabled = enable;
+            pattern3Button.IsEnabled = enable;
+            pattern4Button.IsEnabled = enable;
+            leftButton.IsEnabled = enable;
+            rightButton.IsEnabled = enable;
+            topButton.IsEnabled = enable;
+            bottomButton.IsEnabled = enable;
         }
     }
 }

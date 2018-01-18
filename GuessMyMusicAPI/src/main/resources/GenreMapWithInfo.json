@@ -1,6 +1,6 @@
 [
   {
-    "infoText": "Reggae is a music genre that originated in Jamaica in the late 1960s. The term also denotes the modern popular music of Jamaica and its diaspora. A 1968 single by Toots and the Maytals, \"Do the Reggay\" was the first popular song to use the word \"reggae,\" effectively naming the genre and introducing it to a global audience. While sometimes used in a broad sense to refer to most types of popular Jamaican dance music, the term reggae more properly denotes a particular music style that was strongly influenced by traditional mento as well as American jazz and rhythm and blues, especially the New Orleans R&B practiced by Fats Domino and Allen Toussaint, and evolved out of the earlier genres ska and rocksteady. Reggae usually relates news, social gossip, and political comment. Reggae spread into a commercialized jazz field, being known first as \u2018Rudie Blues\u2019, then \u2018Ska\u2019, later \u2018Blue Beat\u2019, and \u2018Rock Steady\u2019. It is instantly recognizable from the counterpoint between the bass and drum downbeat, and the offbeat rhythm section. The immediate origins of reggae were in ska and rocksteady; from the latter, reggae took over the use of the bass as a percussion instrument.", 
+    "infoText": "Reggae (/\u02c8r\u025b\u0261e\u026a/) is a music genre that originated in Jamaica in the late 1960s. The term also denotes the modern popular music of Jamaica and its diaspora. A 1968 single by Toots and the Maytals, \"Do the Reggay\" was the first popular song to use the word \"reggae,\" effectively naming the genre and introducing it to a global audience. While sometimes used in a broad sense to refer to most types of popular Jamaican dance music, the term reggae more properly denotes a particular music style that was strongly influenced by traditional mento as well as American jazz and rhythm and blues, especially the New Orleans R&B practiced by Fats Domino and Allen Toussaint, and evolved out of the earlier genres ska and rocksteady. Reggae usually relates news, social gossip, and political comment. Reggae spread into a commercialized jazz field, being known first as \u2018Rudie Blues\u2019, then \u2018Ska\u2019, later \u2018Blue Beat\u2019, and \u2018Rock Steady\u2019. It is instantly recognizable from the counterpoint between the bass and drum downbeat, and the offbeat rhythm section. The immediate origins of reggae were in ska and rocksteady; from the latter, reggae took over the use of the bass as a percussion instrument.", 
     "interpretes": [
       "Bob Marley", 
       "Gentleman", 
@@ -21,7 +21,7 @@
     "name": "Hip-Hop"
   }, 
   {
-    "infoText": "Trip hop (similar to \"Downtempo\") is a musical genre that originated in the early 1990s in the United Kingdom, especially Bristol. It has been described as \"a fusion of hip hop and electronica until neither genre is recognizable,\" and may incorporate a variety of styles, including funk, dub, soul, psychedelia, R&B, and house, as well as other forms of electronic music. Trip hop can be highly experimental. Deriving from later idioms of acid house, the term was first used by the British music media to describe the more experimental variant of breakbeat emerging from the Bristol Sound scene in the early 1990s, which contained influences of soul, funk, and jazz. It was pioneered by acts like Massive Attack, Tricky, and Portishead. Trip hop achieved commercial success in the 1990s, and has been described as \"Europe's alternative choice in the second half of the '90s.\";", 
+    "infoText": "Trip hop (sometimes called \"downtempo\") is a musical genre that originated in the early 1990s in the United Kingdom, especially Bristol. It has been described as \"a fusion of hip hop and electronica until neither genre is recognizable,\" and may incorporate a variety of styles, including funk, dub, soul, psychedelia, R&B, and house, as well as other forms of electronic music. Trip hop can be highly experimental. Deriving from later idioms of acid house, the term was first used by the British music media to describe the more experimental variant of breakbeat emerging from the Bristol Sound scene in the early 1990s, which contained influences of soul, funk, and jazz. It was pioneered by acts like Massive Attack, Tricky, and Portishead. Trip hop achieved commercial success in the 1990s, and has been described as \"Europe's alternative choice in the second half of the '90s.\";", 
     "interpretes": [
       "Massive Attack", 
       "Morcheeba", 
@@ -121,7 +121,7 @@
     "name": "Jungle"
   }, 
   {
-    "infoText": "Drum and bass (also written as \"drum 'n' bass\" or \"drum & bass\"; commonly abbreviated as \"D&B\", \"DnB\" or \"D'n'B\") is a genre and branch of electronic music which emerged from rave and jungle scenes in England during the early 1990s. The style is often characterised by fast breakbeats (typically 160\u2013180 beats per minute) with heavy bass and sub-bass lines, sampled sources, and synthesizers.", 
+    "infoText": "Drum and bass (/\u02c8dr\u028cm \u0259nd \u02c8be\u026as/) (also written as \"drum 'n' bass\" or \"drum & bass\"; commonly abbreviated as \"D&B\", \"DnB\" or \"D'n'B\") is a genre and branch of electronic music which emerged from rave and jungle scenes in England during the early 1990s. The style is often characterised by fast breakbeats (typically 160\u2013180 beats per minute) with heavy bass and sub-bass lines, sampled sources, and synthesizers.", 
     "interpretes": [
       "Noisia", 
       "Pendulum", 
@@ -136,22 +136,20 @@
       "Skrillex", 
       "Flux Pavillion", 
       "Skream", 
-      "Knife Party", 
       "Krewella"
     ], 
     "name": "Dubstep"
   }, 
   {
-    "infoText": "Trap is a hip hop music subgenre that originated during the late 1990s/early 2000s from Southern hip hop in the Southern United States. It is typified by double or triple-time sub-divided hi-hats, heavy kick drums from the Roland TR-808 drum machine, layered synthesizers, and an overall dark, ominous, or bleak atmosphere. The term \"trap\" initially referred to places where drug deals take place. In recent years it has been incorporated with pop and electronic dance music by a variety of artists.", 
+    "infoText": "Trap is a hip hop music subgenre that originated during the late 1990s/early 2000s from Southern hip hop in the Southern United States. It is typified by double or triple-time sub-divided hi-hats, heavy kick drums from the Roland TR-808 drum machine, layered synthesizers, and an overall dark, ominous, or bleak atmosphere. The term \"trap\" initially referred to places where drug deals take place. In recent years it has been incorporated with pop and electronic dance music by a variety of artists.\nThe beats per minutes depend on how you count. if you are counting each snare at pulse three you would get a figure around 130 - 170. If you count each snare on the second and fourth pulse you'll get a range of 65 - 85 beats per minute.", 
     "interpretes": [
       "Assassin", 
       "Diplo", 
       "Grandtheft", 
-      "Delax", 
-      "Micky Valen", 
-      "JayKode", 
-      "Levianth", 
-      "Bassnectar"
+      "SickStrophe", 
+      "Troyboi", 
+      "Fabian Mazur", 
+      "Yellow Claw"
     ], 
     "name": "Trap"
   }, 
@@ -172,7 +170,7 @@
       "Outsiders", 
       "Ingrained Instincts"
     ], 
-    "name": "Full-On (PsyTrance)"
+    "name": "Full-On (Psytrance)"
   }, 
   {
     "infoText": "Forest is another sub division of psy trance with similar high beats per minute basslines. Forest tracks also include sounds immitating Nature and Animals along with spiritual references.", 
@@ -210,7 +208,7 @@
       "Evil Activities", 
       "Endymion"
     ], 
-    "name": "Hardcore/Gabber"
+    "name": "Hardcore_Gabber"
   }, 
   {
     "infoText": "Speedcore is a form of hardcore that is characterized by a high tempo and aggressive themes. The name originates from the genre hardcore, and refers to the high tempo found in this genre, which rarely drops below 300 beats per minute (bpm). Earlier speedcore tracks often averaged at about 250 bpm, which could be defined as Terror(core), whereas more recent tracks sometimes exceed 1000 bpm.", 

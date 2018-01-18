@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using GuessMyMusic.Models;
-
-
-//todo (easteregg) when having high bpm set genre to: you can tap fast
 
 namespace GuessMyMusic.Models
 {
@@ -15,7 +11,7 @@ namespace GuessMyMusic.Models
 
             //easter egg
             if (bpm >= 500) {
-                currentTap.Genre = "Well clicked, Sir (or Madam).";
+                currentTap.Genre = "Well clicked, Sir (or Madam)";
                 return currentTap;
             }
 

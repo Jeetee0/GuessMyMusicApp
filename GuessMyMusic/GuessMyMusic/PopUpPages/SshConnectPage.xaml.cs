@@ -11,11 +11,14 @@ namespace GuessMyMusic.PopUpPages
 {
     public partial class SshConnectPage : ContentPage
     {
+        string raspiUniIp = "";
+
         public SshConnectPage()
         {
             InitializeComponent();
             if (!CommunicationPage.sshConnection.Connected)
                 connectButton.IsEnabled = true;
+            getRaspiIp();
         }
 
         async void handleConnect(object sender, EventArgs e) {
@@ -47,7 +50,7 @@ namespace GuessMyMusic.PopUpPages
                 usernameEntry.Text = "pi";
                 pwdEntry.Text = "";
             } else if (clickedButton.Text.Equals("Raspi Uni")) {
-                hostEntry.Text = "141.45.207.59";
+                hostEntry.Text = raspiUniIp;
                 portEntry.Text = "22";
                 usernameEntry.Text = "pi";
                 pwdEntry.Text = "";
@@ -58,6 +61,15 @@ namespace GuessMyMusic.PopUpPages
                 usernameEntry.Text = "student";
                 pwdEntry.Text = "";
             }
+        }
+
+        async void getRaspiIp()
+        {
+            //if oskars raspi is starting it sends a request to youris server, stating its ip address
+            //i can then get the ip of the raspi from youris server
+
+            HTTPRequester client = new HTTPRequester("141.45.92.235", "8080", "/guessMyMusic/ip");
+            raspiUniIp = await client.SendRequest(true);
         }
     }
 }

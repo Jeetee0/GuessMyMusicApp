@@ -3,29 +3,34 @@
     <ContentPage.Content>
         <Grid ColumnSpacing="0" RowSpacing="0" Padding="5,10,5,10">
             <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*" /><!--fill-->
                 <RowDefinition Height="1*" />       <!--entry-->
                 <RowDefinition Height="1*" />       <!--entry-->
                 <RowDefinition Height="1*" />       <!--entry-->
                 <RowDefinition Height="1*" />       <!--entry-->
                 <RowDefinition Height="1*" />       <!--connect button-->
+                <RowDefinition Height="0.6*" /><!--fill-->
                 <RowDefinition Height="0.5*" />     <!--label-->
-                <RowDefinition Height="1.5*" />     <!--predefine buttons-->
+                <RowDefinition Height="1*" />     <!--predefine buttons-->
+                <RowDefinition Height="0.6*" /><!--fill-->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            
-            <Entry x:Name="hostEntry" Text="" Placeholder="host/ip" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"/>
-            <Entry x:Name="portEntry" Text="" Placeholder="port" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"/>
-            <Entry x:Name="usernameEntry" Text="" Placeholder="username" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
-            <Entry x:Name="pwdEntry" Text="" IsPassword="true" Placeholder="password" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3"/>
-            <Button x:Name="connectButton" Text="Connect" Clicked="handleConnect" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4"/>
-            <Label Text="Predefined Connections:" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5"/>
-            <Button Text="Raspi Home" Clicked="handlePredefine" Grid.Column="0" Grid.Row="6"/>
-            <Button Text="Raspi Uni" Clicked="handlePredefine" Grid.Column="1" Grid.Row="6"/>
-            <Button Text="Youris Server" Clicked="handlePredefine" Grid.Column="2" Grid.Row="6"/>
+            <Label/>
+            <Entry x:Name="hostEntry" Text="" Placeholder="host/ip" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"/>
+            <Entry x:Name="portEntry" Text="" Placeholder="port" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
+            <Entry x:Name="usernameEntry" Text="" Placeholder="username" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3"/>
+            <Entry x:Name="pwdEntry" Text="" IsPassword="true" Placeholder="password" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4"/>
+            <Button x:Name="connectButton" Text="Connect" Clicked="handleConnect" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5"/>
+            <Label/>
+            <Label Text="Predefined Connections:" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" VerticalOptions="Center" FontAttributes="Bold"/>
+            <Button Text="Raspi Home" Clicked="handlePredefine" Grid.Column="0" Grid.Row="8"/>
+            <Button Text="Raspi Uni" Clicked="handlePredefine" Grid.Column="1" Grid.Row="8"/>
+            <Button Text="Youris Server" Clicked="handlePredefine" Grid.Column="2" Grid.Row="8"/>
+            <Label/>
             
         </Grid>
     </ContentPage.Content>

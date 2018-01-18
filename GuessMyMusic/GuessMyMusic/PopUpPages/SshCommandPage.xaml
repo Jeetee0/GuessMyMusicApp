@@ -3,27 +3,32 @@
     <ContentPage.Content>
         <Grid Padding="5,10,5,10" VerticalOptions="Center">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0.6*" /><!--fill-->
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" /><!--fill-->
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" /><!--fill-->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Entry x:Name="commandEntry" Placeholder="enter command" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" />
-            <Entry x:Name="commandEntry2" Placeholder="enter command" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" />
-            <Entry x:Name="commandEntry3" Placeholder="enter command" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" />
-
-            <Button x:Name="executeButton" Text="execute Command" Clicked="handleExecute" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" />
-            <Label Text="Predefined Commands:" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" />
-            <Button Text="start disco" Clicked="handlePredefine" Grid.Column="0" Grid.Row="5" />
-            <Button Text="" Clicked="handlePredefine" Grid.Column="1" Grid.Row="5" />
-            <Button Text="empty" Clicked="handlePredefine" Grid.Column="2" Grid.Row="5" />
+            <Label/>
+            <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="commandEntry" Placeholder="enter command" />
+            <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" x:Name="commandEntry2" Placeholder="enter command" />
+            <Entry Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" x:Name="commandEntry3" Placeholder="enter command" />
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" x:Name="executeButton" Text="execute Command" Clicked="handleExecute" />
+            <Label/>
+            <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Text="Predefined Commands:" FontAttributes="Bold" VerticalOptions="Center"/>
+            <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="1" Text="start disco" Clicked="handlePredefine"  />
+            <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" Text="" Clicked="handlePredefine"  />
+            <Button Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1" Text="empty" Clicked="handlePredefine"  />
+            <Label/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

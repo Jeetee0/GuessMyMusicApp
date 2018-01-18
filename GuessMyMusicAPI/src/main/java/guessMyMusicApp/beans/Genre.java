@@ -1,4 +1,4 @@
-package guessMyMusicApp.raspberryPi.beans;
+package guessMyMusicApp.beans;
 
 import java.util.List;
 

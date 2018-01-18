@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{5E53FD35-44BE-40A8-927A-DB6B5B076E20}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="GuessMyMusic/PopUpPages/SshCommandPage.xaml">
     <Files>
       <File FileName="GuessMyMusic/MainPages/GenreOverviewPage.xaml.cs" Line="52" Column="1" />
       <File FileName="GuessMyMusic/PopUpPages/GenreInfoPage.xaml.cs" Line="56" Column="49" />

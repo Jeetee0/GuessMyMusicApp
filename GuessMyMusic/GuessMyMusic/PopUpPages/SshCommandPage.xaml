@@ -15,9 +15,9 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="commandEntry" Placeholder="enter command" />
-            <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="commandEntry2" Placeholder="enter command" />
-            <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="commandEntry3" Placeholder="enter command" />
+            <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="commandEntry" Text="" Placeholder="enter command" />
+            <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="commandEntry2" Text="" Placeholder="enter command" />
+            <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="commandEntry3" Text="" Placeholder="enter command" />
             <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="executeButton" Text="execute Command" Clicked="handleExecute" />
             <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Predefined Commands:" FontAttributes="Bold" VerticalOptions="Center"/>
             <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="1" Text="start disco" Clicked="handlePredefine"  />

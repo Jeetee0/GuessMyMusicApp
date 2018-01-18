@@ -23,17 +23,16 @@ namespace GuessMyMusic.PopUpPages
         }
 
         async void handleExecute(object sender, EventArgs e) {
-            executeButton.IsEnabled = false;
             string command = buildCommand();
-
             if (!command.Equals("")) {
+                executeButton.IsEnabled = false;
                 Task<string> task = sshConnection.RunCommandAsync(command);
                 //task.Wait();
                 //string msg = task.Result;
                 await DisplayAlert("Successfully executed command", "not waiting for response message", "Ok");
                 await Navigation.PopAsync();
+                executeButton.IsEnabled = true;
             }
-            executeButton.IsEnabled = true;
         }
 
         void handlePredefine(object sender, EventArgs e) {

@@ -22,7 +22,7 @@ namespace GuessMyMusic.PopUpPages
         {
             InitializeComponent();
             getRaspiIp();
-            delayEntry.Text = TappingPage.avg.ToString();
+            delayEntry.Placeholder = TappingPage.avg.ToString();
         }
 
         async void SendRequest(string path)

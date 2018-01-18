@@ -46,7 +46,7 @@ namespace GuessMyMusic.MainPages
                     };
                     communicationPage = new CommunicationPage()
                     {
-                        Title = "Connecting to Raspi etc."
+                        Title = "Connect"
                     };
                     break;
             }

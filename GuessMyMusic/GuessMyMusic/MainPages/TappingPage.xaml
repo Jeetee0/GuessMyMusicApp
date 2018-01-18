@@ -3,15 +3,17 @@
     <ContentPage.Content>
         <Grid Padding="20,10,20,10" RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*" /><!--label-->
-                <RowDefinition Height="0.6*" /><!--fill-->
+                <RowDefinition Height="0.5*" /><!--label-->
+                <RowDefinition Height="0.15*" /><!--fill-->
                 <RowDefinition Height="6.5*" /><!--tap button-->
                 <RowDefinition Height="1.5*" /><!--save button-->
+                <RowDefinition Height="0.3*" /><!--fill-->
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" x:Name="infoLabel" Text="Tap to determine BPM. Resets after 2 secs" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16" />
+            <Label Grid.Row="0" x:Name="infoLabel" Text="Tap to determine BPM. Resets after 2 secs" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16" VerticalOptions="Center"/>
             <Label />
             <Button Grid.Row="2" x:Name="bpmButton" Text="Tap Me!" Clicked="on_bpmButtonClicked" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
             <Button Grid.Row="3" x:Name="saveButton" Text="Save your Tap" Clicked="on_saveButtonClicked" />
+            <Label/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

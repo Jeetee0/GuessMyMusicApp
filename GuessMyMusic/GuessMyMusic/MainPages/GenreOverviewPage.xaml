@@ -2,20 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.MainPages.GenreOverviewPage">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="5,5,5,0">
-            <Grid Padding="5,5,5,0">
+            <Grid Padding="5,7,5,10" RowSpacing="0" ColumnSpacing="0" >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="0.7*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*" />
                     <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-                <Label x:Name="infoLabel" XAlign="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" />
+                <Label x:Name="infoLabel" XAlign="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" VerticalOptions="Center"/>
                 <Label Grid.Column="0" Grid.Row="1" Text="Name" VerticalOptions="Center" FontAttributes="Bold" FontSize="16" />
                 <Label Grid.Column="1" Grid.Row="1" Text="Bpm range" VerticalOptions="Center" FontAttributes="Bold" FontSize="16" />
             </Grid>
-            <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand">
                 <ListView x:Name="genresListView" ItemSelected="Handle_ItemSelected" SeparatorColor="Black" VerticalOptions="FillAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -34,7 +34,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </ScrollView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

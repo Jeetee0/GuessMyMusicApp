@@ -36,7 +36,7 @@ namespace GuessMyMusic.PopUpPages
             genreInfoLabel.Text = genreInfo;
 
             //api call to get interpreters for selected genre
-            bool gotResponse = await GetInterprets();
+            bool gotResponse = await GetInterpreters();
             if (gotResponse)
             {
                 foreach (var item in interpreteList)
@@ -53,7 +53,7 @@ namespace GuessMyMusic.PopUpPages
                 genreInfoLabel.Text = "Got no response from Server.";
         }
 
-        async private Task<bool> GetInterprets() {
+        async private Task<bool> GetInterpreters() {
             string path = "/guessMyMusic/genres/interpreters/" + genre.Name;
             try {
                 HTTPRequester request = new HTTPRequester(ip, "8080", path);

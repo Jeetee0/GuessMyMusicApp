@@ -27,18 +27,6 @@ namespace GuessMyMusic.Models
             uri = BuildUri(ip, port, path);
         }
 
-        async public Task<string> SendRequest(bool waitForResponse)
-        {
-            client.Timeout = new TimeSpan(0, 1, 0);
-            if (waitForResponse)
-            {
-                var responseNew = await client.GetStringAsync(uri);
-                return responseNew;
-            }
-            client.GetStringAsync(uri);
-            return "successfully send request";
-        }
-
         static string BuildUri(string ip, string port, string path)
         {
             StringBuilder uri = new StringBuilder("");
@@ -70,6 +58,18 @@ namespace GuessMyMusic.Models
                 }
             }
             return uri.ToString();
+        }
+
+        async public Task<string> SendRequest(bool waitForResponse)
+        {
+            client.Timeout = new TimeSpan(0, 1, 0);
+            if (waitForResponse)
+            {
+                var responseNew = await client.GetStringAsync(uri);
+                return responseNew;
+            }
+            client.GetStringAsync(uri);
+            return "successfully send request";
         }
 
         async public Task<List<string>> SendRequestGetStringList()

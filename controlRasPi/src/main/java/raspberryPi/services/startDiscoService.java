@@ -10,24 +10,23 @@ import javax.ws.rs.core.Response;
 
 import java.util.List;
 
-/* different paths start different "discos"
-* /disco/standard: starts standard disco, reads frames.txt
-* /disco/walkingDot/left
-*   allow pathParamValues: left, right, top, bottom
-*
-* allow queryParamValues to set width and height? is this possible with my scripts
-*/
+// we have the two python scripts: disco.py & lauflicht.py that we can start
+// in addition we can add some parameters to select the pattern we want to show, set delaytime between frames,
+// add a startmessage etc.
 
+//this service executes the right script with the given parameters as queryParams
 
 @Path("/disco")
 public class startDiscoService {
 
     @GET
     @Path("/standard")
-    @Produces({ MediaType.TEXT_PLAIN })
-    public Response startDisco(@QueryParam("cycles") String cycles, @QueryParam("delay") String delay, @QueryParam("mirror") String mirror, @QueryParam("filename") String filename) {
+    @Produces({MediaType.TEXT_PLAIN})
+    public Response startDisco(@QueryParam("cycles") String cycles, @QueryParam("delay") String delay,
+                               @QueryParam("mirror") String mirror, @QueryParam("msg") String msg,
+                               @QueryParam("filename") String filename) {
 
-        //to start disco we have to execute the following command at the set workingDir: python print_frames.py
+        //to start disco we have to execute the following command at the set workingDir: python disco.py
         String workingDir = "/home/pi/Projects/FrameModifier9001/FrameViewer/";
         List<String> commands = new ArrayList<String>();
         commands.add("python");
@@ -50,11 +49,15 @@ public class startDiscoService {
             commands.add("--mirror");
             commands.add(mirror);
         }
+        if (msg != null) {
+            commands.add("--msg");
+            commands.add(mirror);
+        }
 
         shellController.executeCommand(workingDir, commands, false);
 
         String executedCommand = "";
-        for (String command: commands) {
+        for (String command : commands) {
             executedCommand += command + " ";
         }
 
@@ -69,8 +72,10 @@ public class startDiscoService {
 
     @GET
     @Path("/standard/wait")
-    @Produces({ MediaType.TEXT_PLAIN })
-    public Response startDiscoAndWaitForResponse(@QueryParam("cycles") String cycles, @QueryParam("delay") String delay, @QueryParam("mirror") String mirror, @QueryParam("filename") String filename) {
+    @Produces({MediaType.TEXT_PLAIN})
+    public Response startDiscoAndWaitForResponse(@QueryParam("cycles") String cycles, @QueryParam("delay") String delay,
+                                                 @QueryParam("mirror") String mirror, @QueryParam("msg") String msg,
+                                                 @QueryParam("filename") String filename) {
 
         //to start disco we have to execute the following command at the set workingDir: python print_frames.py
         String workingDir = "/home/pi/Projects/FrameModifier9001/FrameViewer/";
@@ -95,11 +100,15 @@ public class startDiscoService {
             commands.add("--mirror");
             commands.add(mirror);
         }
+        if (msg != null) {
+            commands.add("--msg");
+            commands.add(mirror);
+        }
 
         String responseFromShell = shellController.executeCommand(workingDir, commands, true);
 
         String executedCommand = "";
-        for (String command: commands) {
+        for (String command : commands) {
             executedCommand += command + " ";
         }
 
@@ -139,7 +148,7 @@ public class startDiscoService {
         String responseFromShell = shellController.executeCommand(workingDir, commands, true);
 
         String executedCommand = "";
-        for (String command: commands) {
+        for (String command : commands) {
             executedCommand += command + " ";
         }
 

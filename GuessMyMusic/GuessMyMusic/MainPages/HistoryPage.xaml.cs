@@ -48,7 +48,7 @@ namespace GuessMyMusic.MainPages
 
             if (action == "Edit") {
                 //open editpage to edit genre
-                Page editPage = new PopUpPages.EditYourTapPage(index, selectedTap) { Title = "Edit genre"};
+                Page editPage = new PopUpPages.EditYourTapPage(index, selectedTap) { Title = "Edit your tap"};
                 await Navigation.PushAsync(editPage);
             } else if (action == "Delete") {
                 var response = await DisplayAlert("Delete saved Tap?", "Are you sure to delete your Tap with BPM value: " + selectedTap.Bpm + "?", "Delete", "Cancel");

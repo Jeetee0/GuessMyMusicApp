@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+
 
 using Xamarin.Forms;
 
@@ -13,7 +16,7 @@ namespace GuessMyMusic.PopUpPages
     {
         List<string> paramList = new List<string>();
         string prefixPath = "/controlRasPi/disco";
-        string raspiUniIp;
+        string raspiUniIp = "";
 
         public RaspiAPICall()
         {
@@ -24,13 +27,13 @@ namespace GuessMyMusic.PopUpPages
 
         async void SendRequest(string path)
         {
-            if (ipEntry.Text.Equals(""))
+            string host = ipEntry.Text;
+            if (host.Equals("") || HostContainsLetters(host))
                 await DisplayAlert("Alert", "Please enter a valid host before sending a request.", "Ok");
             else
             {
                 EnableDisableButtons(false);
 
-                string host = ipEntry.Text;
                 string cycles = cyclesEntry.Text;
                 string delay = delayEntry.Text;
                 if (!cycles.Equals(""))
@@ -38,17 +41,16 @@ namespace GuessMyMusic.PopUpPages
                 if (!delay.Equals(""))
                     paramList.Add("delay=" + delay);
 
-                HTTPRequester request = new HTTPRequester(ipEntry.Text, "8080", prefixPath + path, paramList);
+                HTTPRequester request = new HTTPRequester(host, "8080", prefixPath + path, paramList);
                 string response;
 
-                try
-                {
+                try {
                     response = await request.SendRequest(true);
                     await DisplayAlert("HTTP Response", response, "Ok");
-                }
-                catch (TaskCanceledException tce)
-                {
-                    await DisplayAlert("Alert", "No response from server", "Ok");
+                } catch (TaskCanceledException tce){
+                    await DisplayAlert("Alert", "No response from server.", "Ok");
+                } catch (Exception e) {
+                    await DisplayAlert("Alert", "Could not connect to server.", "Ok");
                 }
 
                 EnableDisableButtons(true);
@@ -59,15 +61,7 @@ namespace GuessMyMusic.PopUpPages
 
         public void handlePredefine(object sender, EventArgs e)
         {
-            Button clickedButton = (Button)sender;
-            if (clickedButton.Text.Equals("raspi home"))
-            {
-                ipEntry.Text = "192.168.178.30";
-            }
-            else if (clickedButton.Text.Equals("raspi uni"))
-            {
-                ipEntry.Text = raspiUniIp;
-            }
+            ipEntry.Text = raspiUniIp;
         }
 
         public void handleWalkingLight(object sender, EventArgs e)
@@ -81,6 +75,7 @@ namespace GuessMyMusic.PopUpPages
         {
             Button clickedButton = (Button)sender;
             string text = clickedButton.Text;
+            // add the right parameter "filename" to start the chosen script
             if (text.Equals("Big tunnel in"))
                 paramList.Add("filename=BigTunnelIn.txt");
             else if (text.Equals("Building lines"))
@@ -91,16 +86,28 @@ namespace GuessMyMusic.PopUpPages
                 //Matrix
                 paramList.Add("filename=Matrix.txt");
             }
+            // add more parameters
             paramList.Add("mirror=True");
+            if (!msgEntry.Text.Equals(""))
+                paramList.Add("msg=" + msgEntry.Text);
+
             SendRequest("/standard/wait");
         }
 
         async void getRaspiIp() {
-            //if oskars raspi is starting it sends a request to youris server, stating its ip address
-            //i can then get the ip of the raspi from youris server
+            // if oskars raspi is starting it sends a request to youris server, stating its ip address
+            // i can then get the ip with a request from youris server
+            // now i can use the ip adress of my raspberry to send requests to it and start the disco ;)
 
-            HTTPRequester client = new HTTPRequester("141.45.92.235", "8080", "/guessMyMusic/ip");
-            raspiUniIp = await client.SendRequest(true);
+            try {
+                HTTPRequester client = new HTTPRequester("141.45.92.235", "8080", "/guessMyMusic/ip");
+                raspiUniIp = await client.SendRequest(true);
+            } catch (WebException we) {
+                raspiUniIp = "Server or Raspi offline";
+            } catch (HttpRequestException hre) {
+                raspiUniIp = "Server or Raspi offline";
+            }
+
         }
 
         void EnableDisableButtons(bool enable) {
@@ -112,6 +119,15 @@ namespace GuessMyMusic.PopUpPages
             rightButton.IsEnabled = enable;
             topButton.IsEnabled = enable;
             bottomButton.IsEnabled = enable;
+        }
+
+        bool HostContainsLetters(string host) {
+            foreach (var letter in host)
+            {
+                if (Char.IsLetter(letter))
+                    return true;
+            }
+            return false;
         }
     }
 }

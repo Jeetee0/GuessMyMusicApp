@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{5E53FD35-44BE-40A8-927A-DB6B5B076E20}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="GuessMyMusic/MainPages/HistoryPage.xaml.cs" Line="107" Column="15" />
+      <File FileName="GuessMyMusic/MainPages/GenreOverviewPage.xaml.cs" Line="76" Column="15" />
+      <File FileName="GuessMyMusic/Models/HTTPRequester.cs" Line="102" Column="10" />
+      <File FileName="GuessMyMusic/MainPages/MainPage.cs" Line="49" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/d064467/Desktop/GuessMyMusicPublic/GuessMyMusic/Pages/RaspiConnectPage.xaml.cs" relfile="GuessMyMusic/Pages/RaspiConnectPage.xaml.cs" line="17" column="1" />
+      <Breakpoint file="/Users/d064467/Desktop/GuessMyMusicPublic/GuessMyMusic/Models/Rest Communication.cs" relfile="GuessMyMusic/Models/Rest Communication.cs" line="54" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.GuessMyMusic.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+</Properties>

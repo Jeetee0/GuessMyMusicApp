@@ -102,7 +102,7 @@ public class startDiscoService {
         }
         if (msg != null) {
             commands.add("--msg");
-            commands.add(mirror);
+            commands.add(msg);
         }
 
         String responseFromShell = shellController.executeCommand(workingDir, commands, true);

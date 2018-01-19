@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuessMyMusic.MainPages.HistoryPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5,5,5,0">
+            <Grid Padding="5,8,5,10" RowSpacing="0" ColumnSpacing="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.7*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="infoLabel" XAlign="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FontSize="16" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Bpm" VerticalOptions="Center" FontAttributes="Bold" FontSize="16" />
+                <Label Grid.Row="1" Grid.Column="1" Text="Genre" VerticalOptions="Center" FontAttributes="Bold" FontSize="16" />
+                <Label Grid.Row="1" Grid.Column="2" Text="Date" VerticalOptions="Center" FontAttributes="Bold" FontSize="16" />
+            </Grid>
+            <ScrollView>
+                <ListView x:Name="tapsListView" ItemSelected="Handle_ItemSelected" SeparatorColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid Padding="10,0,5,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1.5*" />
+                                            <ColumnDefinition Width="5*" />
+                                            <ColumnDefinition Width="3*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding Bpm}" VerticalOptions="Center" />
+                                        <Label Grid.Column="1" Text="{Binding Genre}" VerticalOptions="Center" TextColor="{Binding BgColor}" />
+                                        <Label Grid.Column="2" Text="{Binding Date}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="12" />
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

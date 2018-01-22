@@ -1,6 +1,6 @@
 package raspberryPi.services;
 
-import raspberryPi.shell.shellController;
+import raspberryPi.shell.ShellController;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ import java.util.List;
 //this service executes the right script with the given parameters as queryParams
 
 @Path("/disco")
-public class startDiscoService {
+public class StartDiscoService {
 
     @GET
     @Path("/standard")
@@ -54,7 +54,7 @@ public class startDiscoService {
             commands.add(mirror);
         }
 
-        shellController.executeCommand(workingDir, commands, false);
+        ShellController.executeCommand(workingDir, commands, false);
 
         String executedCommand = "";
         for (String command : commands) {
@@ -105,7 +105,7 @@ public class startDiscoService {
             commands.add(msg);
         }
 
-        String responseFromShell = shellController.executeCommand(workingDir, commands, true);
+        String responseFromShell = ShellController.executeCommand(workingDir, commands, true);
 
         String executedCommand = "";
         for (String command : commands) {
@@ -145,7 +145,7 @@ public class startDiscoService {
             commands.add(start);
         }
 
-        String responseFromShell = shellController.executeCommand(workingDir, commands, true);
+        String responseFromShell = ShellController.executeCommand(workingDir, commands, true);
 
         String executedCommand = "";
         for (String command : commands) {

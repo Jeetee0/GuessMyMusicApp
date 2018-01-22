@@ -2,8 +2,10 @@ package raspberryPi.shell;
 
 import java.io.*;
 import java.util.List;
+import java.io.IOException;
+import java.util.*;
 
-public class shellController {
+public class ShellController {
 
     public static String executeCommand(String workingDir, List<String> commands, boolean waitForResponse) {
         String response = "";
